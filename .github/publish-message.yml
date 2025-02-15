@@ -1,0 +1,14 @@
+name: Publish Message
+
+on:
+  publish:
+    types: [published]
+
+jobs:
+  send-message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send message on publish
+        run: |
+          echo "A new version has been published!" 
+          # Here you can add commands to send the message to a messaging service or channel.
