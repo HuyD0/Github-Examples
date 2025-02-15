@@ -1,0 +1,17 @@
+name: Dependent Jobs Example
+on: [push]
+jobs:
+  job2:
+    needs: job1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step A
+        run: echo "Hello"
+      - name: Step B
+        run: echo "World"
+
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1
+        run: echo "This is Job 1"
